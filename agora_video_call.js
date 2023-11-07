@@ -12,12 +12,12 @@ function generateRandomString(length) {
   return result;
 }
 
-const CHECKIN_LINK = "https://speakers.majisemi.com/check_in/578"
+const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1972"
 
 const users = [];
 const strRandom = generateRandomString(5)
 
-for (let i = 1; i <= 25; i++) {
+for (let i = 1; i <= 30; i++) {
   users.push({
     email: `test${i}_${strRandom}@gmail.com`,
     username: `test${i}_${strRandom}`,
