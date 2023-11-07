@@ -12,7 +12,7 @@ function generateRandomString(length) {
   return result;
 }
 
-const CHECKIN_LINK = "http://localhost:3000/check_in/250?id=eyJhbGciOiJIUzI1NiJ9.MjUw.5YqH3FfQ7XOmU0nSCGeBWGKf4a5w2-W33LZs0yqSVaY"
+const CHECKIN_LINK = ""
 
 const users = [];
 const strRandom = generateRandomString(5)
