@@ -12,12 +12,12 @@ function generateRandomString(length) {
   return result;
 }
 
-const CHECKIN_LINK = ""
+const CHECKIN_LINK = "http://localhost:3000/check_in/250?id=eyJhbGciOiJIUzI1NiJ9.MjUw.5YqH3FfQ7XOmU0nSCGeBWGKf4a5w2-W33LZs0yqSVaY"
 
 const users = [];
 const strRandom = generateRandomString(5)
 
-for (let i = 0; i < 20; i++) {
+for (let i = 1; i <= 25; i++) {
   users.push({
     email: `test${i}_${strRandom}@gmail.com`,
     username: `test${i}_${strRandom}`,
