@@ -12,7 +12,7 @@ function generateRandomString(length) {
   return result;
 }
 
-const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1974"
+const CHECKIN_LINK = "https://speakers.majisemi.com/check_in/579"
 
 const users = [];
 const strRandom = generateRandomString(5)
