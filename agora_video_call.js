@@ -1,5 +1,10 @@
 const puppeteer = require("puppeteer")
 
+function getRandomElement(array) {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+
 function generateRandomString(length) {
   const characters = 'abcdefghijklmnopqrstuvwxyz';
   let result = '';
@@ -12,20 +17,21 @@ function generateRandomString(length) {
   return result;
 }
 
-const CHECKIN_LINK = "http://localhost:3000/check_in/256"
+const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1982"
 
 const users = [];
 const strRandom = generateRandomString(10)
 
-for (let i = 1; i <= 2; i++) {
+for (let i = 1; i <= 25; i++) {
   users.push({
     email: `test${i}_${strRandom}@gmail.com`,
     username: `test${i}_${strRandom}`,
   });
 }
+const pages = [];
 
 (async () => {
-  const browser = await puppeteer.launch({headless: 'new'});;
+  const browser = await puppeteer.launch({headless: 'new'});
 
   for (let i = 0; i < users.length; i++) {
     const page = await browser.newPage();
@@ -65,27 +71,29 @@ for (let i = 1; i <= 2; i++) {
     await page.waitForSelector('.comments-screen-zone')
     await page.waitForSelector('.ck.ck-reset.ck-editor.ck-rounded-corners')
     await page.waitForSelector('.btn-submit-chat.text-right.mt-33p.pr-0p')
-
-    setInterval(async () => {
-      console.log('i', i);
-      const randomReactionIndex = Math.floor(Math.random() * 6) + 1;
-      page.click(`.comments-screen-zone button:nth-of-type(${randomReactionIndex})`)
-      page.evaluate(() => {
-        function generateRandomString2(length) {
-          const characters = 'abcdefghijklmnopqrstuvwxyz';
-          let result = '';
-        
-          for (let i = 0; i < length; i++) {
-            const randomIndex = Math.floor(Math.random() * characters.length);
-            result += characters.charAt(randomIndex);
-          }
-        
-          return result;
-        }
-        window.commentEditor.setData(generateRandomString2(50))
-        return true
-      })
-      await page.click('.btn-submit-chat.text-right.mt-33p.pr-0p')
-    }, 2000)
+    pages.push(page)
   }
+  setInterval(async () => {
+    const page = getRandomElement(pages)
+    page.evaluate(() => {
+      function generateRandomString2(length) {
+        const characters = 'abcdefghijklmnopqrstuvwxyz';
+        let result = '';
+      
+        for (let i = 0; i < length; i++) {
+          const randomIndex = Math.floor(Math.random() * characters.length);
+          result += characters.charAt(randomIndex);
+        }
+      
+        return result;
+      }
+      window.commentEditor.setData(generateRandomString2(50))
+      $('.btn-submit-chat.text-right.mt-33p.pr-0p').click()
+      const min = 1
+      const max = 6
+      const randomReactionIndex = Math.floor(Math.random() * (max - min + 1)) + min;
+      $(`.comments-screen-zone button:nth-of-type(${randomReactionIndex})`).click()
+      return true
+    })
+  }, 500)
 })();
