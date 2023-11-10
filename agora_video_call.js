@@ -22,7 +22,7 @@ const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1982"
 const users = [];
 const strRandom = generateRandomString(10)
 
-for (let i = 1; i <= 25; i++) {
+for (let i = 1; i <= 20; i++) {
   users.push({
     email: `test${i}_${strRandom}@gmail.com`,
     username: `test${i}_${strRandom}`,
@@ -68,6 +68,7 @@ const pages = [];
 
     const seminarUrl = await page.url();
     console.log('seminar url', seminarUrl) 
+    await page.setDefaultNavigationTimeout(0);
     await page.waitForSelector('.comments-screen-zone')
     await page.waitForSelector('.ck.ck-reset.ck-editor.ck-rounded-corners')
     await page.waitForSelector('.btn-submit-chat.text-right.mt-33p.pr-0p')
