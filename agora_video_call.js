@@ -100,5 +100,5 @@ const pages = [];
         console.log(error);
       }
     })
-  }, 500)
+  }, 3000)
 })();
