@@ -78,19 +78,19 @@ const pages = [];
     const page = getRandomElement(pages)
     page.evaluate(() => {
       try {
-        function generateRandomString2(length) {
-          const characters = 'abcdefghijklmnopqrstuvwxyz';
-          let result = '';
+        // function generateRandomString2(length) {
+        //   const characters = 'abcdefghijklmnopqrstuvwxyz';
+        //   let result = '';
         
-          for (let i = 0; i < length; i++) {
-            const randomIndex = Math.floor(Math.random() * characters.length);
-            result += characters.charAt(randomIndex);
-          }
+        //   for (let i = 0; i < length; i++) {
+        //     const randomIndex = Math.floor(Math.random() * characters.length);
+        //     result += characters.charAt(randomIndex);
+        //   }
         
-          return result;
-        }
-        window.commentEditor.setData(generateRandomString2(50))
-        $('.btn-submit-chat.text-right.mt-33p.pr-0p').click()
+        //   return result;
+        // }
+        // window.commentEditor.setData(generateRandomString2(50))
+        // $('.btn-submit-chat.text-right.mt-33p.pr-0p').click()
         const min = 1
         const max = 6
         const randomReactionIndex = Math.floor(Math.random() * (max - min + 1)) + min;
