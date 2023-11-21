@@ -17,7 +17,7 @@ function generateRandomString(length) {
   return result;
 }
 
-const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1991"
+const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1992"
 
 const users = [];
 const strRandom = generateRandomString(10)
@@ -100,5 +100,5 @@ const pages = [];
         console.log(error);
       }
     })
-  }, 300)
+  }, 200)
 })();
