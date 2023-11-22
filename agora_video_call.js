@@ -17,7 +17,7 @@ function generateRandomString(length) {
   return result;
 }
 
-const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1992"
+const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1972"
 
 const users = [];
 const strRandom = generateRandomString(10)
@@ -91,10 +91,10 @@ const pages = [];
         }
         window.commentEditor.setData(generateRandomString2(50))
         $('.btn-submit-chat.text-right.mt-33p.pr-0p').click()
-        // const min = 1
-        // const max = 6
-        // const randomReactionIndex = Math.floor(Math.random() * (max - min + 1)) + min;
-        // $(`.comments-screen-zone button:nth-of-type(${randomReactionIndex})`).click()
+        const min = 1
+        const max = 6
+        const randomReactionIndex = Math.floor(Math.random() * (max - min + 1)) + min;
+        $(`.comments-screen-zone button:nth-of-type(${randomReactionIndex})`).click()
         return true
       } catch (error) {
         console.log(error);
