@@ -22,7 +22,7 @@ const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1996"
 const users = [];
 const strRandom = generateRandomString(10)
 
-for (let i = 1; i <= 25; i++) {
+for (let i = 1; i <= 13; i++) {
   users.push({
     email: `test${i}_${strRandom}@gmail.com`,
     username: `test${i}_${strRandom}`,
