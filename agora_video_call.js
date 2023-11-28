@@ -131,5 +131,5 @@ const pages = []
         console.log(error)
       }
     })
-  }, 200)
+  }, 2000)
 })()
