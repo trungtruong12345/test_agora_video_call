@@ -5,10 +5,6 @@ function getRandomElement(array) {
   return array[randomIndex]
 }
 
-function consoFunc(mess) {  
-  console.log(mess);
-}
-
 function generateRandomString(length) {
   const characters = "abcdefghijklmnopqrstuvwxyz"
   let result = ""
@@ -21,7 +17,8 @@ function generateRandomString(length) {
   return result
 }
 
-const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1962"
+const CHECKIN_LINK = "https://msm.majisemi.com/check_in/1999"
+// const CHECKIN_LINK = "http://localhost:3000/check_in/3"
 
 const users = []
 const strRandom = generateRandomString(10)
